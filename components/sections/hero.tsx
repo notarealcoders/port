@@ -37,12 +37,12 @@ export function HeroSection() {
   };
 
   return (
-    <section 
+    <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Animated background gradient */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5"
         animate={{
           background: [
@@ -82,9 +82,9 @@ export function HeroSection() {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
+            className="text-4xl md:text-6xl md:leading-[1.5] font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
           >
-            John Doe
+            Rohit Singh
           </motion.h1>
           <motion.h2
             variants={itemVariants}
@@ -96,15 +96,16 @@ export function HeroSection() {
             variants={itemVariants}
             className="max-w-[600px] mx-auto text-muted-foreground text-lg"
           >
-            Building exceptional digital experiences with modern web technologies.
-            Focused on creating scalable and performant applications.
+            Building exceptional digital experiences with modern web
+            technologies. Focused on creating scalable and performant
+            applications.
           </motion.p>
           <motion.div
             variants={itemVariants}
             className="flex justify-center gap-4"
           >
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="group relative overflow-hidden"
               asChild
             >
@@ -118,8 +119,8 @@ export function HeroSection() {
                 />
               </Link>
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
               className="group relative overflow-hidden"
               asChild

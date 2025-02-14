@@ -1,64 +1,65 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Progress } from "@/components/ui/progress";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaDatabase,
+  FaDocker,
+} from "react-icons/fa";
+import { SiTypescript, SiJavascript } from "react-icons/si";
 
 const skills = [
-  { 
+  {
     name: "React/Next.js",
-    level: 95,
-    icon: "/icons/react.svg",
+    icon: FaReact,
     color: "#61DAFB",
     category: "Frontend",
     experience: "5 years",
     projects: 30,
   },
-  { 
+  {
     name: "TypeScript",
-    level: 90,
-    icon: "/icons/typescript.svg",
+    icon: SiTypescript,
     color: "#3178C6",
     category: "Language",
     experience: "4 years",
     projects: 25,
   },
-  { 
+  {
     name: "Node.js",
-    level: 85,
-    icon: "/icons/nodejs.svg",
+    icon: FaNodeJs,
     color: "#339933",
     category: "Backend",
     experience: "4 years",
     projects: 20,
   },
-  { 
-    name: "Python",
-    level: 80,
-    icon: "/icons/python.svg",
-    color: "#3776AB",
+  {
+    name: "Javascript",
+    icon: SiJavascript,
+    color: "#F0DB4F",
     category: "Language",
     experience: "3 years",
     projects: 15,
   },
-  { 
+  {
     name: "SQL/NoSQL",
-    level: 85,
-    icon: "/icons/database.svg",
+    icon: FaDatabase,
     color: "#336791",
     category: "Database",
     experience: "4 years",
     projects: 25,
   },
-  { 
+  {
     name: "DevOps",
-    level: 75,
-    icon: "/icons/devops.svg",
+    icon: FaDocker,
     color: "#2496ED",
     category: "Infrastructure",
     experience: "2 years",
@@ -66,7 +67,7 @@ const skills = [
   },
 ];
 
-const categories = Array.from(new Set(skills.map(skill => skill.category)));
+const categories = Array.from(new Set(skills.map((skill) => skill.category)));
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -99,7 +100,9 @@ export function SkillsSection() {
           className="space-y-12"
         >
           <div className="text-center space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Skills</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Skills
+            </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground">
               Technical expertise and proficiency in modern web technologies
             </p>
@@ -114,7 +117,7 @@ export function SkillsSection() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="grid gap-6 md:grid-cols-2"
+                  className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
                 >
                   {skills
                     .filter((skill) => skill.category === category)
@@ -124,39 +127,26 @@ export function SkillsSection() {
                           <TooltipTrigger asChild>
                             <motion.div
                               variants={itemVariants}
-                              whileHover={{ scale: 1.02 }}
-                              className="group relative p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                              whileHover={{ scale: 1.05 }}
+                              className="group flex flex-col items-center justify-center p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
                             >
-                              <div className="flex items-center gap-4 mb-2">
-                                <div 
-                                  className="w-10 h-10 rounded-full flex items-center justify-center"
-                                  style={{ backgroundColor: `${skill.color}20` }}
-                                >
-                                  <img
-                                    src={skill.icon}
-                                    alt={skill.name}
-                                    className="w-6 h-6"
-                                  />
-                                </div>
-                                <div>
-                                  <h4 className="font-medium">{skill.name}</h4>
-                                  <p className="text-sm text-muted-foreground">
-                                    {skill.experience} experience
-                                  </p>
-                                </div>
+                              <div
+                                className="w-16 h-16 rounded-full flex items-center justify-center mb-2"
+                                style={{ backgroundColor: `${skill.color}20` }}
+                              >
+                                <skill.icon
+                                  className="w-10 h-10"
+                                  style={{ color: skill.color }}
+                                />
                               </div>
-                              <Progress 
-                                value={skill.level} 
-                                className="h-2"
-                                style={{ 
-                                  '--progress-background': skill.color,
-                                } as React.CSSProperties}
-                              />
+                              <span className="text-sm font-medium text-center">
+                                {skill.name}
+                              </span>
                             </motion.div>
                           </TooltipTrigger>
                           <TooltipContent>
                             <div className="text-sm">
-                              <p>Proficiency: {skill.level}%</p>
+                              <p>{skill.experience} experience</p>
                               <p>{skill.projects}+ projects completed</p>
                             </div>
                           </TooltipContent>

@@ -39,7 +39,7 @@ export function SiteHeader() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 flex w-full justify-between md:justify-start">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">John Doe</span>
+            <span className="font-bold">Rohit Singh</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
             {routes.map((route) => (
@@ -48,7 +48,9 @@ export function SiteHeader() {
                 href={route.href}
                 className={cn(
                   "transition-colors hover:text-foreground/80",
-                  pathname === route.href ? "text-foreground" : "text-foreground/60"
+                  pathname === route.href
+                    ? "text-foreground"
+                    : "text-foreground/60"
                 )}
               >
                 {route.label}

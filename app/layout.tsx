@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "John Doe",
-      url: "https://johndoe.dev",
+      name: "Rohit Singh",
+      url: "https://mrohitsingh.in",
     },
   ],
-  creator: "John Doe",
+  creator: "Rohit Singh",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og.jpg`],
-    creator: "@johndoe",
+    creator: "@rohitInsights",
   },
   icons: {
     icon: "/favicon.ico",
@@ -64,13 +64,25 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Security Headers */}
-        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none';" />
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none';"
+        />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="X-Frame-Options" content="DENY" />
         <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-        <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+        <meta
+          httpEquiv="Referrer-Policy"
+          content="strict-origin-when-cross-origin"
+        />
+        <meta
+          httpEquiv="Permissions-Policy"
+          content="camera=(), microphone=(), geolocation=(), interest-cohort=()"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+        />
         {/* Additional Security Headers */}
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
