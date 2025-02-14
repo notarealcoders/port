@@ -33,8 +33,58 @@ const projects = {
       "/project1-3.jpg"
     ]
   },
-  // Add more projects here
+  "task-management": {
+    title: "Task Management App",
+    description: "Collaborative task management tool with real-time updates",
+    longDescription: `
+      A modern task management application designed for team collaboration.
+      Features include real-time updates, task assignments, and progress tracking.
+    `,
+    technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
+    features: [
+      "Real-time collaboration",
+      "Task assignments",
+      "Progress tracking",
+      "Team chat",
+      "File sharing"
+    ],
+    demoUrl: "https://demo.example.com",
+    githubUrl: "https://github.com/example/project",
+    images: [
+      "/project2-1.jpg",
+      "/project2-2.jpg"
+    ]
+  },
+  "analytics-dashboard": {
+    title: "Analytics Dashboard",
+    description: "Real-time analytics dashboard with data visualization",
+    longDescription: `
+      A comprehensive analytics dashboard providing real-time insights.
+      Features include interactive charts, custom reports, and data export.
+    `,
+    technologies: ["Vue.js", "D3.js", "Express", "PostgreSQL"],
+    features: [
+      "Interactive charts",
+      "Custom reports",
+      "Data export",
+      "Real-time updates",
+      "User permissions"
+    ],
+    demoUrl: "https://demo.example.com",
+    githubUrl: "https://github.com/example/project",
+    images: [
+      "/project3-1.jpg",
+      "/project3-2.jpg"
+    ]
+  }
 };
+
+// Required for static site generation with output: 'export'
+export function generateStaticParams() {
+  return Object.keys(projects).map((slug) => ({
+    slug,
+  }));
+}
 
 export default function ProjectPage() {
   const params = useParams();
