@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -58,9 +59,11 @@ export function HeroSection() {
             variants={itemVariants}
             className="flex justify-center gap-4"
           >
-            <Button size="lg">View Projects</Button>
-            <Button size="lg" variant="outline">
-              Contact Me
+            <Button size="lg" asChild>
+              <Link href="/projects">View Projects</Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/contact">Contact Me</Link>
             </Button>
           </motion.div>
         </motion.div>
