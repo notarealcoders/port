@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "security-check": "npm audit && npm outdated"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -51,6 +52,7 @@
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.1",
     "framer-motion": "^11.0.8",
+    "helmet": "^7.1.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.446.0",
     "next": "13.5.1",
@@ -69,6 +71,10 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.2.2",
     "vaul": "^0.9.9",
+    "xss": "^1.0.15",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/helmet": "^4.0.0"
   }
 }
